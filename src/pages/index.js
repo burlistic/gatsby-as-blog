@@ -1,10 +1,13 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+
+
 
 class BlogIndex extends React.Component {
   render() {
@@ -33,6 +36,10 @@ class BlogIndex extends React.Component {
                 <small>{node.date}</small>
               </header>
               <section>
+                {documentToReactComponents(node.richText.json)}
+                
+
+
                 <p
                   dangerouslySetInnerHTML={{
                     __html: 'html goes here!',
@@ -46,6 +53,8 @@ class BlogIndex extends React.Component {
     )
   }
 }
+
+
 
 export default BlogIndex
 
@@ -66,6 +75,9 @@ export const pageQuery = graphql`
             fluid {
               src
             }
+          }
+          richText {
+            json
           }
         }
       }
