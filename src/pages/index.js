@@ -36,15 +36,9 @@ class BlogIndex extends React.Component {
                 <small>{node.date}</small>
               </header>
               <section>
-                {documentToReactComponents(node.richText.json)}
+
+                {documentToReactComponents(node.abstract.json)}
                 
-
-
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: 'html goes here!',
-                  }}
-                />
               </section>
             </article>
           )
@@ -77,6 +71,9 @@ export const pageQuery = graphql`
             }
           }
           richText {
+            json
+          }
+          abstract {
             json
           }
         }
