@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    title: `Gatsby Agility Systems Blog`,
+    author: `Will Webster / Steve Barret / Jeanne Armstrong`,
+    description: `A simple blog show casing our work.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: ``,
     },
   },
   plugins: [
@@ -74,5 +74,13 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        spaceId: 'a4sxc24ky1ll',
+        accessToken: 'QD59rOZxCK7MlWATADNjtY8_bZOI3bDvslMAwi3ishc',
+      },
+    },
+    
   ],
 }
